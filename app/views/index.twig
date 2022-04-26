@@ -170,11 +170,16 @@
               </h2>
               {{ about_desc|raw }}
               <div class="row">
-                <div class="col-lg-8 ms-auto pt-5">
+                <div class="col-lg-10 ms-auto pt-3">
                   <div class="row about-items justify-content-end">
                     {% for item in about_items %}
-                      <div class="col-lg-4">
-                        {{ item.children[0].settings.html|raw }}
+                      <div class="col-lg-3">
+                        <img 
+                          class="about-items__img"
+                          src="https://cms.abpx.kz{{ item.children[0].settings.image.path }}" 
+                          alt="{{ item.children[1].settings.text }}"
+                        >
+                        <p>{{ item.children[1].settings.text }}</p>
                       </div>
                     {% endfor %}
                   </div>

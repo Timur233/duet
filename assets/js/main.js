@@ -154,13 +154,17 @@ var frontend = (function frontendModule() {
     function galleryCarousel() {
 
         var gallery = new Swiper('.gallery-swiper', {
-            loop: true,
+            loop: false,
             slidesPerView: "auto",
             initialSlide: 0,
             keyboardControl: true,
             mousewheelControl: true,
             autoHeight: true,
             spaceBetween: 25,
+            navigation: {
+                nextEl: ".gallery-next",
+                prevEl: ".gallery-prev",
+            },
         })
 
     }

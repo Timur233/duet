@@ -1,0 +1,44 @@
+<section id="callback" class="callback-h section" style="background-image: url('https://cms.abpx.kz/storage/uploads/2022/02/16/620c95975bf026202c963dfdb75--.jpg');">
+   <div class="container">
+      <div class="section-title">
+         <h2 class="section-title__h2">Оставить заявку</h2>
+      </div>
+      <form class="callback-h__form" action="#">
+         <div class="flex">
+
+            <div class="input-group callback-h__group flex__5">
+               <input 
+                  type="text" 
+                  class="input-group__input" 
+                  id="staticTopFormName" 
+                  name="name" 
+                  placeholder="{{ translate['name'] }}" 
+                  fieldname="Имя"
+               >
+            </div>
+
+            <div class="input-group callback-h__group flex__5">
+               <input 
+                  type="text" 
+                  class="input-group__input" 
+                  id="staticTopFormPhone" 
+                  name="phone" 
+                  placeholder="{{ translate['phone'] }}" 
+                  fieldname="Телефон" 
+                  required="required"
+               >
+            </div>
+
+            <div class="input-group callback-h__group flex__2">
+               <button 
+                  class="btn btn--gradient send-form-button callback-h__btn" 
+                  onclick="frontend.form(this); return false"
+               >
+                  {{ translate['call_back_me'] }}
+               </button>
+            </div>
+
+         </div>
+      </form>
+   </div>
+</section>

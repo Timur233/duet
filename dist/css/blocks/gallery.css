@@ -1,0 +1,24 @@
+.main-gallery__item {
+  width: auto; }
+
+.main-gallery__link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 6;
+  border-radius: softer(3);
+  background: linear-gradient(279.47deg, rgba(36, 162, 230, 0.8) -9.93%, rgba(227, 10, 148, 0.8) 127.08%); }
+
+.main-gallery__img {
+  display: inline-block;
+  height: 400px;
+  border-radius: softer(3); }
+
+.gallery-swiper {
+  opacity: 0; }
+
+.swiper-slide-active > .main-gallery__link::before {
+  display: none; }

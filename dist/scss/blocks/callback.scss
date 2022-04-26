@@ -1,0 +1,64 @@
+.callback-h {
+    position: relative;
+    z-index: 5;
+    color: $white;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: $main-gradient;
+    }
+
+    &__group {
+        &:not(:last-child) {
+            padding-right: spacer(4);
+
+            @media (max-width: 830px) {
+                padding-right: 0;
+                padding-bottom: spacer(4);
+            }
+        }
+
+        @media (max-width: 830px) {
+            width: 100%;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        height: 100%;
+        
+        @media (max-width: 830px) {
+            width: auto;
+            padding-top: spacer(2);
+            padding-bottom: spacer(2);
+        }
+    }
+}
+
+.callback {
+    &__form {
+        margin-bottom: 0px;
+    }
+
+    &__group {
+
+        &:not(:last-child) {
+            margin-bottom: spacer(4);
+        }
+    }
+
+    & .input-err {
+        position: relative;
+        top: auto;
+        color: $white;
+    }
+}

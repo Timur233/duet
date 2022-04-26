@@ -1,0 +1,62 @@
+@mixin swiper-control {
+    color: $orange;
+    position: relative;
+
+    &::after {
+        font-size: 32px;
+
+        @media (max-width: 830px) {
+            font-size: 26px;
+        }
+    }
+}
+
+.main-gallery {
+    &__item {
+        width: auto;
+    }
+
+    &__link {
+        &::before {
+            content: '';
+            position: absolute;
+            opacity: 1;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 6;
+            transition: opacity $fast-animation;
+            border-radius: softer(3);
+            background: 
+                linear-gradient(
+                    279.47deg, 
+                    rgba(36, 162, 230, 0.8) -9.93%, 
+                    rgba(227, 10, 148, 0.8) 127.08%
+                );
+        }
+    }
+
+    &__img {
+        display: inline-block;
+        height: 400px;
+        border-radius: softer(3);
+
+        @media (max-width: 830px) {
+            height: 220px;
+        }
+    }
+
+    &__controll {
+        @include swiper-control;
+    }
+}
+
+.gallery-swiper {
+    overflow: visible;
+}
+
+.swiper-slide-active > .main-gallery__link::before {
+    opacity: 0;
+}
+

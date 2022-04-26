@@ -1,0 +1,64 @@
+<div class="sidebar sidebar__container">
+
+    <div class="lang-switcher sidebar__lang">
+      <a 
+        href="{% if lang != 'ru' %}{{ base_url }}{% else %}#{% endif %} " 
+        class="lang-switcher__item {% if lang == 'ru' %}lang-switcher__item--active{% endif %}">RU</a>
+      <a 
+        href="{% if lang != 'kk' %}{{ base_url }}kk{% else %}#{% endif %}" 
+        class="lang-switcher__item {% if lang == 'kk' %}lang-switcher__item--active{% endif %}">KZ</a>
+    </div>
+
+    <nav class="mobile-menu sidebar__menu">
+        <a 
+            class="mobile-menu__link" 
+            href="#about-project" 
+            onclick="frontend.sidebar('open');">
+            {{ translate['about_of_project'] }}
+        </a>
+        <a 
+            class="mobile-menu__link" 
+            href="#gallery" 
+            onclick="frontend.sidebar('open');">
+            {{ translate['gallery'] }}
+        </a>
+        <a 
+            class="mobile-menu__link" 
+            href="#advantages" 
+            onclick="frontend.sidebar('open');">
+            {{ translate['advantages'] }}
+        </a>
+        <a 
+            class="mobile-menu__link" 
+            href="#locations" 
+            onclick="frontend.sidebar('open');">
+            {{ translate['select_location'] }}
+        </a>
+        {# <a 
+            class="mobile-menu__link" 
+            href="#building-steps" 
+            onclick="frontend.sidebar('open');">
+            {{ translate['building_steps'] }}
+        </a> #}
+        <a 
+            class="mobile-menu__link" 
+            href="#contacts" 
+            onclick="frontend.sidebar('open');">
+            {{ translate['contacts'] }}
+        </a>  
+    </nav>  
+          
+    <div class="sidebar__callback">
+        <a href="https://instagram.com/{{ site_insta }}" target="_blank" class="sidebar__link">
+            <svg class="icon sidebar__insta-icon">
+                <use xlink:href="./assets/symbol.svg?v=2#icon-insta"></use>
+             </svg>
+            {{ site_insta }}
+        </a>
+        <a href="tel:{{ site_phone }}" class="sidebar__link" onclick="frontend.sidebar('open'); fbq('track', 'Contact');">
+            <img src="./assets/img/phone-icon.svg" alt="Контакты" class="icon sidebar__phone-icon">
+            {{ site_phone }}
+        </a>
+        <button href="" class="btn btn--gradient" data-modal="#callback-modal" onclick="frontend.sidebar('open');">Оставить заявку</button>
+    </div>
+</div>

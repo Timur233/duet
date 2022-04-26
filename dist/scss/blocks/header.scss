@@ -1,0 +1,236 @@
+.main-header {
+    position: fixed;
+    width: 100%;
+    color: $white;
+    z-index: 11;
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: spacer(7) 0;
+
+        @media (max-width: 830px) {
+            padding: spacer(2) 0;
+        }
+    }
+
+    &--sticky {
+        color: $text;
+        background-color: $white;
+        box-shadow: $box-shadow;
+
+        .main-header__content {
+            padding: spacer(2) 0;
+        }
+
+        & .main-contact__phone {
+            margin-bottom: spacer(0);
+        }
+
+        & .logo-block__img {
+            height: 55px;
+            display: none;
+
+            &--dark {
+                display: inline-block;
+            }
+
+            @media (max-width: 830px) {
+                height: 48px;
+            }
+        }
+
+        & .main-contact__phone-icon {
+            filter: invert(.8);
+        }
+
+        & .menu-toggle__line {
+            background-color: $text;
+        }
+    }
+
+    &__menu-toggle {
+        margin-right: spacer(3);
+    }
+
+    &__logos {
+        margin-right: auto;
+    }
+
+    &__navigate {
+        margin-right: spacer(10);
+
+        @media (max-width: 1240px) {
+            margin-right: spacer(5);
+        }
+    }
+
+    &__mobile-contact {
+        display: none;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: spacer(-1);
+
+        @media (max-width: 830px) {
+            display: block;
+        }
+    }
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    padding: spacer(2) spacer(2) spacer(2) spacer(0);
+    cursor: pointer;
+
+    &__line {
+        display: inline-block;
+        height: 2px;
+        width: 20px;
+        opacity: 1;
+        border-radius: 3px;
+        transform-origin: left;
+        transform: rotate(0);
+        background-color: $white;
+        transition: transform $slow-animation;
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+
+    &--open {
+        & .menu-toggle__line:first-child {
+            transform: rotate(45deg);
+        }
+
+        & .menu-toggle__line:nth-child(2) {
+            transform: translateX(20%);
+            opacity: 0;
+        }
+
+        & .menu-toggle__line:last-child {
+            transform: rotate(-45deg);
+        }
+    }
+
+    @media (max-width: 1060px) {
+        display: flex;
+    }
+}
+
+.logo-block {
+    display: flex;
+    flex-wrap: nowrap;
+
+    &__link {
+        &:not(:last-child) {
+            margin-right: spacer(6);
+    
+            @media (max-width: 1240px) {
+                margin-right: spacer(3);
+            }
+        }
+
+        &--exin {
+            @media (max-width: 450px) {
+                display: none;
+            }
+        }
+    }
+
+    &__img{
+        height: 64px;
+
+        &--dark {
+            display: none;
+        }
+
+        @media (max-width: 1240px) {
+            height: 48px;
+        }
+    }
+}
+
+.navigate {
+    
+    &__block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__link {
+        position: relative;
+        margin-right: spacer(5);
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.4;
+
+        &::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            right: 100%;
+            transition: right $slow-animation;
+            background-color: $orange;
+        }
+
+        &--active::before {
+            right: 0;
+        }
+
+        @media (max-width: 1240px) {
+            margin-right: spacer(4);
+        }
+
+        @media (max-width: 1120px) {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 1060px) {
+        display: none;
+    }
+}
+
+.main-contact {
+    &__block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &__phone {
+        font-size: 18px;
+        margin-bottom: spacer(2);
+    }
+
+    &__phone-icon {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: spacer(1);
+    }
+
+    @media (max-width: 830px) {
+        display: none;
+    }
+}
+
+.mobile-contact {
+    padding: spacer(5) spacer(5);
+    background: $button-gradient;
+    border-radius: 0 0 0 softer(12);
+    box-shadow: $box-shadow;
+    
+    &__phone-icon {
+        width: 24px;
+        height: 24px;
+    }
+}

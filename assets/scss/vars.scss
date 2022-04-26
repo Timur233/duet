@@ -1,0 +1,48 @@
+//gradients
+$main-gradient: linear-gradient(279.47deg, rgba(36, 162, 230, 0.8) -9.93%, rgba(227, 10, 148, 0.8) 127.08%);
+$button-gradient: linear-gradient(258.99deg, #F28F17 2.49%, #FEED00 135.88%);
+
+//colors
+$white: #ffffff;
+$black: #000000;
+$gray: #4F4F4F;
+$gray-light: #BDBDBD;
+$gray-light-btns: #E7E7E7;
+$green: #009900;
+$blue: #3992DD;
+$red: #EB5757;
+$yellow: #CC933D;
+$orange: #F5A014;
+
+//text-colors
+$text: #2C1F3D;
+$text-gray: #9e9090;
+$text-gray-dark: #646464;
+// $text-gray-h: #111111;
+// $text-gray-p:  #333333;
+// $text-gray-light: #C0C0C0;
+
+//bg's colors
+$bg-body: #E5E5E5;
+$bg-gray: #F8F8F8;
+
+//box-shadow
+$box-shadow: 0px 3px 12px -3px rgba(46, 46, 46, 0.25);
+
+//animations
+$slow-animation: 0.24s;
+$midd-animation: 0.18s;
+$fast-animation: 0.16s;
+
+//grid
+$container: 1260px;
+$container-fluid: 100%;
+
+//functions
+@function spacer($factor: 1) {
+    @return 4px * $factor;
+}
+
+@function softer($factor: 1) {
+    @return 2px * $factor;
+}

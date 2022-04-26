@@ -1,0 +1,21 @@
+<section id="pay-methods" class="pay-methods section section--gray">
+    <div class="container">
+        <div class="section-title">
+            <h2 class="section-title__h2">{{ pay_methods_title }}</h2>
+        </div>
+        <div class="flex pay-methods__list">
+            {% for item in pay_methods_items %}
+                <div class="flex__1-3 pay-methods__item">
+                    <img 
+                        class="pay-methods__icon"
+                        src="https://cms.abpx.kz{{ item.children[0].settings.image.path }}" 
+                        alt="{{ item.children[1].settings.text }}"
+                    >
+                    <h3 class="pay-methods__name">
+                        {{ item.children[1].settings.text }}
+                    </h3>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

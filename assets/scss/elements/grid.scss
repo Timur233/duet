@@ -1,0 +1,54 @@
+@mixin col-flex($size) {
+    flex: 0 0 auto;
+    width: $size;
+}
+
+.container {
+    max-width: $container;
+    padding: 0 spacer(4);
+    margin: 0 auto;
+}
+
+.container-fluid {
+    width: $container-fluid;
+    max-width: 1730px;
+    padding: 0 spacer(20);
+    margin: 0 auto;
+
+    @media (max-width: ($container + 160)) {
+        width: auto;
+        max-width: $container;
+        padding: 0 spacer(4);
+    }
+}
+
+.flex {
+    display: flex;  
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &__1-2 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+
+    &__1-3 {
+        flex: 0 0 auto;
+        width: calc(100% / 3);
+    }
+
+    &__5 {
+        flex: 0 0 auto;
+        width: calc(calc(100%/12)*5);
+    }
+
+    &__2 {
+        flex: 0 0 auto;
+        width: calc(calc(100%/12)*2);
+    }
+
+    &--v-center {
+        align-items: center;
+    }
+} 
+

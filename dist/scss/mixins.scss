@@ -1,0 +1,6 @@
+@mixin cover-position($margin: 0) {
+    left: $margin;
+    top: $margin;
+    right: $margin;
+    bottom: $margin;
+}

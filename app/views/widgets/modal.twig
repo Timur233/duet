@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div class="modal modal--hidden" id="callback-modal">
+    <div class="modal__dialog modal__dialog--center">
+        <div class="modal__content">
+            <div class="modal__body">
+
+                <button class="modal__btn-close" data-modal="#callback-modal">
+                    <svg class="icon modal__icon-close">
+                        <use xlink:href="./assets/symbol.svg?v=1#icon-close"></use>
+                    </svg>
+                </button>
+
+                <h3 class="modal__title">Оставить заявку</h3>
+
+                <form class="callback callback__form">
+                    <div class="input-group callback__group">
+                        <input type="text" class="input-group__input" id="formName" name="name" placeholder="{{ translate['name'] }}" fieldname="Имя">
+                    </div>
+
+                    <div class="input-group callback__group">
+                        <input type="text" class="input-group__input" id="formPhone" name="phone" placeholder="{{ translate['phone'] }}" fieldname="Телефон" required="">
+                    </div>
+
+                    <div class="callback__group">
+                        <a href="#" class="btn btn--gradient callback__btn" onclick="frontend.form(this); return false">{{ translate['send'] }}</a>
+                    </div>
+
+                    <!--div class="callback__preloader" style="display: none">
+                        <img src="../assets/img/preloader" alt="">
+                    </div-->
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal__shadow" data-modal="#callback-modal"></div>
+</div>

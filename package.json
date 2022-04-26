@@ -1,0 +1,36 @@
+{
+  "name": "qargaly-city",
+  "version": "0.0.1",
+  "description": "",
+  "main": "gulpfile.js",
+  "type": "module",
+  "scripts": {
+    "scss": "node-sass --watch assets/scss -o assets/css"
+  },
+  "author": "Iskandarov Timur",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^6.0.0",
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "gulp-sass": "^5.1.0",
+    "node-sass": "^7.0.1"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eclint fix",
+      "eslint --fix"
+    ],
+    "*.{scss,css,vue}": [
+      "eclint fix",
+      "stylelint fix"
+    ],
+    ".editorconfig": [
+      "eclint fix"
+    ]
+  }
+}

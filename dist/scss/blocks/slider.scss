@@ -1,0 +1,46 @@
+.main-slider {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 100vh; 
+    background-size: cover;
+    background-position: center;
+    background-image: url(https://cms.abpx.kz/storage/uploads/2022/02/08/62026bacc6f2cslider-render.jpg);
+
+    &--short {
+        height: 45vh;
+    }
+
+    &__shadow {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            linear-gradient(180deg, #000000 -8.65%, rgba(0, 0, 0, 0) 36.26%), 
+            linear-gradient(0deg, rgba(0, 0, 0, 0.7) -18.33%, rgba(0, 0, 0, 0) 48.52%);
+    }
+
+    &__content {
+        margin-top: auto;
+        margin-bottom: spacer(15);
+    }
+
+    @media (max-width: 830px) {
+        height: 90vh;
+    }
+}
+
+.slider-content {
+    position: relative;
+    width: 100%;
+    z-index: 5;
+
+    &__title {
+        font-size: 44px;
+        line-height: 65px;
+        font-weight: 200;
+        color: $white;
+    }
+}

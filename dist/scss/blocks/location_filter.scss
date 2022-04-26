@@ -1,0 +1,135 @@
+.locations {
+    &__filter {
+        display: flex;
+        flex-direction: column;
+        padding-right: spacer(10);
+
+        @media (max-width: 830px) {
+            padding-right: 0;
+        }
+    }
+
+    &--controll {
+        &::after {
+            font-size: 32px;
+            color: $orange;
+        }
+    }
+
+    & .flex__1-2 {
+        @media (max-width: 830px) {
+            width: 100%;
+        }
+    }
+}
+
+.locations-filter {
+    &__label {
+        font-size: 16px;
+        font-weight: 400;
+        color: $black;
+        margin-bottom: spacer(1);
+    }
+    &__group {
+        margin-bottom: spacer(5);
+    }
+}
+
+.filter-group {
+    &__btn {
+        line-height: 1.9;
+        font-weight: 500;
+        text-transform: lowercase;
+        color: $black;
+        border-width: 2px;
+        background: none;
+
+        &--floors {
+            border-color: $orange;
+
+            &:hover {
+                border-color: $orange;
+                background: $orange;
+            }
+
+            &.active {
+                background: $button-gradient !important;
+            }
+        }
+
+        &.active {
+            color: $white;
+            background: $blue;
+        }
+
+        &:hover {
+            color: $white;
+        }
+
+        &:not(:last-child) {
+            margin-right: spacer(2);
+            margin-bottom: spacer(2);
+        }
+    }
+}
+
+.locations-result{
+    &__carousel {
+        position: relative;
+        overflow: hidden;
+        border-radius: 14px;
+        background-color: $white;
+        box-shadow: $box-shadow;
+    }
+
+    &__item {
+        padding: spacer(10);
+
+        @media (max-width: 830px) {
+            padding: spacer(6);
+        }
+    }
+}
+
+.location {
+    height: 100%;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        @media (max-width: 830px) {
+            text-align: center;
+        }
+    }
+
+    &__img-block {
+        @media (max-width: 830px) {
+            order: -1;
+            margin-bottom: spacer(0);
+        }
+    }
+
+    &__title {
+        font-size: 22px;
+    }
+
+    &__square {
+        font-size: 16px;
+
+        @media (max-width: 830px) {
+            margin-top: 0;
+        }
+    }
+
+    &__download {
+        display: block;
+        margin-bottom: spacer(2);
+    }
+
+    &__img {
+        max-width: 100%;
+        min-height: 300px;
+    }
+}

@@ -1,0 +1,21 @@
+.main-slider {
+  display: flex;
+  align-items: flex-end;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url(https://cms.abpx.kz/storage/uploads/2022/02/08/62026bacc6f2cslider-render.jpg); }
+  .main-slider__shadow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #000000 -8.65%, rgba(0, 0, 0, 0) 36.26%), linear-gradient(0deg, rgba(0, 0, 0, 0.7) -18.33%, rgba(0, 0, 0, 0) 48.52%); }
+  .main-slider__content {
+    margin-top: auto;
+    margin-bottom: spacer(15); }
+
+.slider-content {
+  position: relative;
+  z-index: 5; }

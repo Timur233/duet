@@ -1,0 +1,52 @@
+.pay-methods {
+    &__list {
+        padding-top: spacer(5);
+    }
+
+    &__item {
+        padding: 0 spacer(20);
+        text-align: center;
+
+        @media (max-width: 1200px) {
+            padding: 0 spacer(10);
+        }
+
+        @media (max-width: 1000px) {
+            padding: 0 spacer(3);
+        }
+
+        @media (max-width: 830px) {
+            width: 50%;
+
+            &:not(:last-child) {
+                margin-bottom: spacer(8);
+            }
+
+            padding: 0 spacer(3);
+        }
+
+        @media (max-width: 500px) {
+            width: 100%;
+            padding: 0 spacer(10);
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        height: 80px;
+        margin-bottom: spacer(5);
+
+        @media (max-width: 500px) {
+            width: 60px;
+        }
+    }
+
+    &__name {
+        font-size: 20px;
+        font-weight: 400;
+
+        @media (max-width: 500px) {
+            font-size: 18px;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+<section id="advantages" class="advantages section">
+    <div class="container">
+        <div class="flex flex--v-center">
+            <div class="flex__1-3 advantages__info">
+                <div class="section-title">
+                    <h2 class="section-title__h2">{{ advantages_title }}</h2>
+                </div>
+                {{ advantages_desc|raw }}
+            </div>
+            <div class="flex__1-3 advantages__left">
+                <div class="advantages__item">
+                    <img class="advantages__img" src="https://cms.abpx.kz{{ advantages_items[0].children[0].settings.image.path }}" alt="{{ advantages_items[0].children[1].settings.text }}">
+                    <h4 class="advantages__title">{{ advantages_items[0].children[1].settings.text }}</h4>
+                    {{ advantages_items[0].children[2].settings.text|raw }}
+                </div>
+                <div class="advantages__item">
+                    <img class="advantages__img" src="https://cms.abpx.kz{{ advantages_items[1].children[0].settings.image.path }}" alt="{{ advantages_items[1].children[1].settings.text }}">
+                    <h4 class="advantages__title">{{ advantages_items[1].children[1].settings.text }}</h4>
+                    {{ advantages_items[1].children[2].settings.text|raw }}
+                </div>
+            </div>
+            <div class="flex__1-3 advantages__right">
+                <div class="advantages__item">
+                    <img class="advantages__img" src="https://cms.abpx.kz{{ advantages_items[2].children[0].settings.image.path }}" alt="{{ advantages_items[2].children[1].settings.text }}">
+                    <h4 class="advantages__title">{{ advantages_items[2].children[1].settings.text }}</h4>
+                    {{ advantages_items[2].children[2].settings.text|raw }}
+                </div>
+                <div class="advantages__item">
+                    <img class="advantages__img" src="https://cms.abpx.kz{{ advantages_items[3].children[0].settings.image.path }}" alt="{{ advantages_items[3].children[1].settings.text }}">
+                    <h4 class="advantages__title">{{ advantages_items[3].children[1].settings.text }}</h4>
+                    {{ advantages_items[3].children[2].settings.text|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

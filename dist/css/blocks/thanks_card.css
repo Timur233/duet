@@ -1,0 +1,11 @@
+.thanks-card {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: spacer(20) sapcer(4); }
+  .thanks-card::before {
+    content: '';
+    position: absolute;
+    background: #000; }
+  .thanks-card__block {
+    text-align: center; }

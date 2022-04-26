@@ -1,0 +1,652 @@
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1200">
+
+    <title>{{ site_title }}</title>
+    <link rel="shortcut icon" href="https://cms.abpx.kz/{{ site_favicon.path }}" type="image/png">
+    <link rel="stylesheet" href="{{ base_url }}assets/css/bootstrap/bootstrap.css?v=1" />
+    <link rel="stylesheet" href="{{ base_url }}assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="{{ base_url }}assets/css/new.style.css?v=13" />
+
+    {{ site_scripts_in_head|raw }}
+  
+  </head>
+  <body class="theme-{{ theme }}">
+
+    {{ site_scripts_in_body|raw }}
+  
+  <div id="shadow" onclick="frontend.sidebar('open'); return false"></div>
+
+    <div id="preloader">
+      <div class="preloader-content">
+        <img src="https://cms.abpx.kz{% if theme == 'white' %}{{ site_logo.path }}{% else %}{{ site_logo_two.path }}{% endif %}" alt="">
+      </div>
+    </div>
+
+    <div class="sidebar position-fixed">
+      <nav class="p-4 text-center h-100" style="display: flex; flex-direction: column;">
+        <a href="#" class="close" onclick="frontend.sidebar('open'); return false"><span></span><span></span></a>
+        <a href="#" onclick="frontend.sidebar('open');">
+          <img src="https://cms.abpx.kz{{ site_second_logo.path }}" alt="">
+        </a>
+        <ul>
+          <li>
+            <a href="#home" onclick="frontend.sidebar('open');">Главная</a>
+          </li>
+          <li>
+            <a href="#about" onclick="frontend.sidebar('open');">О проекте</a>
+          </li>
+          <li>
+            <a href="#concept" onclick="frontend.sidebar('open');">Концепция</a>
+          </li>
+          <li>
+            <a href="#flats" onclick="frontend.sidebar('open');">Выбрать квартиру</a>
+          </li>
+          <li>
+            <a href="#architec" onclick="frontend.sidebar('open');">Архитектура</a>
+          </li>
+          <li>
+            <a href="#buildingSteps" onclick="frontend.sidebar('open');">Ход строительства</a>
+          </li>
+          <li>
+            <a href="#contacts" onclick="frontend.sidebar('open');">Контакты</a>
+          </li>
+        </ul>
+        <div class="call">
+          <a href="tel:{{ site_phone }}" class="phone" onclick="frontend.sidebar('open');"><i class="fas fa-phone-alt me-2"></i> {{ site_phone }}</a>
+          <a href="" class="btn btn-gradient" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="frontend.sidebar('open');">Обратная связь</a>
+        </div>
+      </nav>
+    </div>
+
+    <header class="position-absolute align-items-center w-100" style="z-index: 9">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-4 col-md-3 col-lg-3 col-xl-2 col-xxl-1 d-flex brand align-items-center justify-content-start">
+            <a class="navbar-brand d-inline-block py-2 mr-1" target="_blank" href="https://exin.kz/">
+              <img src="https://cms.abpx.kz{{ exin_logo.path }}" class="px-2 py-1" />
+            </a>
+            <a class="navbar-brand d-inline-block py-2 m-0" href="#home">
+              <img src="https://cms.abpx.kz{% if theme == 'white' %}{{ site_logo.path }}{% else %}{{ site_logo_two.path }}{% endif %}" class="px-2 py-1" />
+            </a>
+          </div>
+
+          <div class="d-none d-lg-flex col-lg col-xl d-flex align-items-center justify-content-end">
+            <ul class="nav-menu right text-end">
+              <li>
+                <a class="active" href="#home">
+                  О комплексе
+                </a>
+              </li>
+              <li>
+                <a href="#flats">
+                  Квартиры
+                </a>
+              </li>
+              <li>
+                <a href="#buildingSteps">
+                  Ход строительства
+                </a>
+              </li>
+              <li>
+                <a href="#contacts">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="col-4 col-md-5 col-lg-3 d-flex align-items-center justify-content-end menu">
+            <a href="tel:{{ site_phone }}" id="phoneGroup">
+              <span class="icon"><span class="icon-phone"></span></span>
+              <span class="phoneNumber">{{ site_phone }}</span><br>
+              <span class="info">Отдел продаж</span>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </header>
+
+    <section id="home" class="slider h-90">
+      <div class="city parallax__layer" style="background-image: url('https://cms.abpx.kz{% if theme == 'white' %}{{ slide_image.path }}{% else %}{{ slide_image_dark.path }}{% endif %}')" data-speed="50"></div>
+      <div class="container position-relative d-flex align-items-center h-100">
+        <div class="section-slider-content">
+          <div class="row">
+            <div class="col-md-11 col-lg-11 ms-auto text-left">
+              <h1>{{ slide_title }}<br><span class="gold">{{ slide_title_two }} </span></h1>
+              <div class="slider_content">
+                <p class="mb-4">{{ slide_desc }}</p>
+                <a href="#flats" class="btn btn-gradient mt-2">Выбрать квартиру</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  	{% if discounst %}
+    <section id="discount" class="discount pt-6 pb-6 pb-md-0">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-12 col-lg-6 d-flex align-items-center order-1 order-md-0">
+            <div class="about_block">
+              <h2 class="sectionTitle">
+                {{ discounst_title }}
+                <span class="color">{{ discounst_color_title }}</span>
+                <span class="ghostTitle">{{ discounst_ghost_title }}</span>
+              </h2>
+              {{ discounst_text|raw }}
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-6 oder-0 order-md-1 mb-5 mb-md-0 text-center">
+              <img src="https://cms.abpx.kz{{ discounst_image.path }}" class="mx-auto" alt="{{ discounst_title }} {{ discounst_color_title }}">
+          </div>
+
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <section id="about" class="aboutUsBlock pb-6 pt-6 py-md-6 bg-white">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12 col-lg-5 order-0 order-md-1 order-lg-0 mb-5 mt-0 mb-md-0 mt-md-5 mb-lg-0 mt-lg-0">
+            <div class="about-img">
+              <img src="https://cms.abpx.kz{% if theme == 'white' %}{{ about_img.path }}{% else %}{{ about_img_two.path }}{% endif %}" alt="{{ about_title }} {{ about_title_two }}" style="transform: translateY(20%);">
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-7 d-flex align-items-center order-1 order-md-0 order-lg-1">
+            <div class="about_block text-end">
+              <h2 class="sectionTitle">
+                {{ about_title }}
+                <span class="gold">{{ about_title_two }}</span>
+              </h2>
+              {{ about_desc|raw }}
+              <div class="row">
+                <div class="col-lg-8 ms-auto pt-5">
+                  <div class="row about-items justify-content-end">
+                    {% for item in about_items %}
+                      <div class="col-lg-4">
+                        {{ item.children[0].settings.html|raw }}
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  
+    <section id="flats" class="selectFloor py-6">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+            <h2 class="sectionTitle mb-4">Выбор <span class="gold">квартиры</span></h2>
+            <p class="mb-2">Количество комнат:</p>
+            <div id="roomButtons" class="d-inline-block w-100">
+              <a class="btn btn-gradient me-2 mb-3 rooms" data-filter="1" href="#">1-х комнатные</a>
+              <a class="btn btn-gradient active me-2 mb-3 rooms" data-filter="2" href="#">2-х комнатные</a>
+              <a class="btn btn-gradient me-2 mb-3 rooms" data-filter="3" href="#">3-х комнатные</a>
+              <a class="btn btn-gradient me-2 mb-3 rooms" data-filter="4" href="#">4-х комнатные</a>
+            </div>
+            <p class="mb-2 d-none">Этаж:</p>
+            <div id="floorButtons" class="d-none w-100">
+              <a
+                class="btn btn-gradient me-2 mb-3 sections"
+                data-filter="1"
+                href="#"
+                >1</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 sections"
+                data-filter="2"
+                href="#"
+                >2</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 sections"
+                data-filter="3"
+                href="#"
+                >3</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 sections"
+                data-filter="4"
+                href="#"
+                >4</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 sections"
+                data-filter="5"
+                href="#"
+                >5</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 sections"
+                data-filter="6"
+                href="#"
+                >6</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 sections"
+                data-filter="7"
+                href="#"
+                >7</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 sections"
+                data-filter="8"
+                href="#"
+                >8</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 sections"
+                data-filter="9"
+                href="#"
+                >9</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 sections"
+                data-filter="10"
+                href="#"
+                >10</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 sections"
+                data-filter="11"
+                href="#"
+                >11</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 sections"
+                data-filter="12"
+                href="#"
+                >12</a
+              >
+            </div>
+            <p class="mb-2">Площадь:</p>
+            <div id="squareButtons" class="d-inline-block w-100">
+              <a
+                class="btn btn-gradient me-2 mb-3 square"
+                data-filter="122.5"
+                href="#"
+                >122.5 м2</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 square"
+                data-filter="95.5"
+                href="#"
+                >95.5 м2</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 square"
+                data-filter="150.5"
+                href="#"
+                >150.5 м2</a
+              >
+              <a
+                class="btn btn-gradient me-2 mb-3 square"
+                data-filter="60.5"
+                href="#"
+                >60.5 м2</a
+              >
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 d-inline-block d-md-flex">
+            <div class="w-100 overflow-hidden plansCarousel position-relative">
+              <div class="swiper-flats">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="bg-white w-100 h-100 p-4">
+                      <div class="row h-100">
+                        <div class="col-md-5 floot-info d-flex flex-wrap">
+                          <div class="floor-data align-items-start">
+                            <h4>1-х комнатная</h4>
+                            <p>Площадь: <b>60.5 м2</b></p>
+                            <p>Дата сдачи: <b>2022/первый квартал</b></p>
+                            <div>
+                              <span>Стоимость от: </span>
+                              <h6>18 530 000 тг</h6>
+                              <b>от 306 280 за м2</b>
+                            </div>
+                          </div>
+                          <div class="orderBottons mt-auto align-items-end">
+                            <a href="" class="btn btn-gradient"
+                            >Обратная связь <i class="fas fa-chevron-right"></i
+                            ></a>
+                            <a
+                                    class="downloadPlan"
+                                    data-fancybox
+                                    data-caption="3-х комнатная"
+                                    href="assets/img/plan.png"
+                            >Скачать планировку</a
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-7 floor-plan">
+                          <a
+                                  href="assets/img/plan.png"
+                                  data-fancybox
+                                  data-caption="3-х комнатная"
+                          >
+                            <img src="assets/img/plan.png" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="bg-white w-100 h-100 p-4">
+                      <div class="row h-100">
+                        <div class="col-md-5 floot-info d-flex flex-wrap">
+                          <div class="floor-data align-items-start">
+                            <h4>1-х комнатная</h4>
+                            <p>Площадь: <b>60.5 м2</b></p>
+                            <p>Дата сдачи: <b>2022/первый квартал</b></p>
+                            <div>
+                              <span>Стоимость от: </span>
+                              <h6>18 530 000 тг</h6>
+                              <b>от 306 280 за м2</b>
+                            </div>
+                          </div>
+                          <div class="orderBottons mt-auto align-items-end">
+                            <a href="" class="btn btn-gradient"
+                            >Обратная связь <i class="fas fa-chevron-right"></i
+                            ></a>
+                            <a
+                                    class="downloadPlan"
+                                    data-fancybox
+                                    data-caption="3-х комнатная"
+                                    href="assets/img/plan.png"
+                            >Скачать планировку</a
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-7 floor-plan">
+                          <a
+                                  href="assets/img/plan.png"
+                                  data-fancybox
+                                  data-caption="3-х комнатная"
+                          >
+                            <img src="assets/img/plan.png" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+        var offersAll = {{ offers|raw }}
+      </script>
+
+    </section>
+
+    <!--style="background-image: linear-gradient(0deg, #F8F8F8 0%, rgba(255, 255, 255, 0) 38.54%), linear-gradient(180deg, #F8F8F8 0%, rgba(255, 255, 255, 0) 53.12%), linear-gradient(0deg, rgba(255, 255, 255, 0.37), rgba(255, 255, 255, 0.37)), url(https://cms.abpx.kz{{ advant_img.path }});"-->
+    <section id="advantages" class="advantages bg-white py-6"
+
+    >
+      <div class="container py-3">
+        <h2 class="sectionTitle text-center">
+          {{ advant_title|raw }}
+        </h2>
+        <div class="advantages__stars">
+          <span class="advantages__star-item icon-star-solid"></span>
+          <span class="advantages__star-item icon-star-solid"></span>
+          <span class="advantages__star-item icon-star-solid"></span>
+          <span class="advantages__star-item icon-star-solid"></span>
+          <span class="advantages__star-item icon-star-solid"></span>
+        </div>
+        <div class="advant-items swiper-container mt-5">
+          <div class="swiper-wrapper">
+            {% for item in advant_items %}
+              <div class="advant-items__slide swiper-slide">
+                <div class="advant-image" style="background-image: url(https://cms.abpx.kz{{ item.children[0].settings.image.path }});">
+                </div>
+                <div class="advant-hide">
+                  <h3>{{ item.children[1].settings.text }}</h3>
+                  <p>{{ item.children[2].settings.text|raw }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photGallery" class="photGallery py-6">
+      <div class="container">
+
+        <h2 class="sectionTitle text-center">
+          {{ site_gallery_title }}
+          <span class="gold">{{ site_gallery_title_two }}</span>
+        </h2>
+
+        <div class="gallery-swiper swiper-container py-4">
+          <div class="swiper-wrapper">
+            {% for item in site_gallery %}
+            <div class="swiper-slide">
+              <a data-fslightbox="first-lightbox" href="https://cms.abpx.kz{{ item.path }}">
+                <img src="https://cms.abpx.kz{{ item.path }}" alt="">
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="concept" class="concept bg-white">
+      <div class="container-fluid container-xxl">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-6 align-items-center d-flex order-1 order-md-0">
+            <div class="content ps-0 pe-5 ps-md-0 py-5 py-md-5 text-start">
+              <h2 class="sectionTitle">
+                {{ concept_title_1 }}
+              </h2>
+              {{ concept_text_1|raw }}
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-6 col-xl-6 px-0 order-0 order-md-1">
+            <div class="img-block">
+              <img src="https://cms.abpx.kz{{ concept_image_1.path }}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architec" class="architec bg-white">
+      <div class="container-fluid container-xxl">
+        <div class="row">
+          <div class="col-md-6 col-lg-6 col-xl-6 px-0">
+            <div class="img-block">
+              <img src="https://cms.abpx.kz{{ concept_image_2.path }}" alt="">
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 align-items-center d-flex">
+            <div class="content ps-4 pe-4 ps-md-5 py-5 py-md-5">
+              <h2 class="sectionTitle">
+                {{ concept_title_2 }}
+              </h2>
+              {{ concept_text_2|raw }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="buildingSteps" class="buildingSteps py-6">
+      <div class="container">
+
+        <h2 class="sectionTitle">
+          {{ steps_title }}
+          <span class="gold">{{ steps_color_title }}</span>
+        </h2>
+
+        <div class="steps-swiper swiper-container py-4">
+          <div class="swiper-wrapper">
+            {% for item in steps_items %}
+            <div class="swiper-slide {% if item.children[1].settings.gallery %}hasGallery{% endif %}">
+              {% if item.children[1].settings.gallery %}
+                <a href="#" data-gallery-images="{% for img in item.children[1].settings.gallery %}https://cms.abpx.kz{{ img.path}}{% if loop.last == false  %},{% endif%}{% endfor %}"  onclick="frontend.lightBox(this.getAttribute('data-gallery-images')); return false">
+              {% endif %}
+              <div class="stepImage" style="background-image: url(https://cms.abpx.kz{{ item.children[2].settings.image.path }})"></div>
+                <div class="step-information">
+                  <h3>
+                    {% set date = item.children[0].settings.text|split(' ') %}
+                    {% for word in date %}
+                      {% if loop.last %}
+                        <span class="gold">{{ word }} </span>
+                      {% else %}
+                        {{ word }}&nbsp;
+                      {% endif %}
+                    {% endfor %}</h3>
+                </div>
+                {% if item.children[1].settings.gallery %}
+                  </a>
+                {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="aboutExin" class="aboutExin pb-6">
+      <div class="container pb-4">
+        <div class="row bg-white ms-0">
+          <div class="col-5 ps-0">
+            <div class="img-block">
+              <img src="https://cms.abpx.kz{{ exin_image.path }}" alt="">
+              <div class="exin-info position-absolute">
+                <img src="https://cms.abpx.kz{{ exin_logo_two.path }}" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-7 ps-5 align-items-center d-flex position-relative">
+            <div class="content">
+              <h2 class="sectionTitle">
+                {{ exin_title }}
+                <span class="gold">{{ exin_title_two }}</span>
+              </h2>
+              {{ exin_desc|raw }}
+              <a href="https://exin.kz/" target="_blank" class="btn btn-gradient mt-3">Подробнее</a>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="bg-right d-none" width="372" height="573" viewBox="0 0 372 573" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M268.873 0H220.376L196.205 41.8651L330.584 81.8562L307.666 159.245L154.715 113.727L134.797 148.226L271.864 189.004L248.946 266.393L93.2746 220.145L73.3569 254.644L276.771 315.084L254.045 391.806L253.941 391.791L31.5697 327.021L0 381.702L331.338 573H372V59.5404L268.873 0Z" fill="#F8F8F8"></path>
+            </svg>            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="new-map">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-7 col-lg-6 px-0">
+            <div id="map" style="height: 600px">    
+            </div>
+          </div>
+          <div class="col-md-5 col-lg-6 p-5 py-sm-6 py-md-5 p-lg-0 bg-white">
+            <div class="callback-form d-flex align-items-center justify-content-center h-100">
+              <form action="">
+                <h2 class="sectionTitle">
+                  Контакты
+                </h2>
+                <div class="contact mb-4 pb-1">
+                  <p><i class="icon-map"></i> г. Алматы, ул. Абая д. ХХХ </p>
+                  <p><span><i class="icon-insta"></i>{{site_insta}}</span><span><i class="icon-phone-call"></i>{{ site_phone }}</span></p>
+                </div>
+                
+                <h3 class="text-capitalize mb-4">Оставить заявку</h3>
+
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="staticFormName" name="name" placeholder="Имя" fieldname="Имя">
+                </div>
+                <div class="mb-4">
+                  <input type="text" class="form-control" id="staticFormPhone" name="phone" placeholder="Телефон" fieldname="Телефон" required="required">
+                </div>
+                <div class="d-inline-block">
+                  <a href="#" class="btn btn-gradient float-start sendFormButton" onclick="frontend.form(this); return false">Заказать звонок</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{ include('widgets/footer.twig') }}
+
+    <!-- Modal -->
+    <div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <a href="#" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+            <h5 class="modal-title" id="callbackModalLabel">Обратная связь</h5>
+            <form action="">
+              <div class="mb-3">
+                <input type="text" class="form-control" id="formName" name="name" fieldname="Имя" placeholder="Имя">
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" id="formPhone" name="phone" placeholder="Телефон" fieldname="Телефон" required="" onkeyup="editMaskInput(this)">
+              </div>
+              <div>
+                <a href="#" class="btn btn-gradient float-start sendFormButton" onclick="frontend.form(this); return false">Отправить</a>
+              </div>
+              <!--div class="preloader" style="display: none">
+                <img src="../assets/img/preloader" alt="">
+              </div-->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+  <script src="{{ base_url }}assets/js/bootstrap/bootstrap.min.js"></script>
+  <script src="{{ base_url }}assets/js/swiper.min.js"></script>
+  <script src="{{ base_url }}assets/js/fslightbox.js"></script>
+  <script
+    src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=c931e95f-6835-4672-9786-8ec02a9db87a"
+    type="text/javascript"
+  ></script>
+  <script>
+    var translater = new Object({
+      count_rooms: "{{ translate['count_rooms'] }}",
+      floor: "{{ translate['floor'] }}",
+      square: "{{ translate['square'] }}",
+      download_plan: "{{ translate['download_plan'] }}",
+      leave_a_request: "{{ translate['leave_a_request'] }}",
+      no_valid_number: "{{ translate['no_valid_number'] }}",
+      multiplier: "{{ translate['multiplier'] }}",
+      multiplierX1: "{{ translate['multiplierX1'] }}"
+    })
+  </script>
+  <script src="{{ base_url }}assets/js/main.js?v=4"></script>
+
+  {{ site_scripts_in_footer|raw }}
+
+</html>

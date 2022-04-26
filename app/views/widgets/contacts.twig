@@ -1,0 +1,49 @@
+<section id="contacts" class="contacts section">
+  <div class="container">
+    <div class="section-title">
+        <h2 class="section-title__h2 contacts__title">{{ translate['contacts'] }}</h2>
+    </div>
+    <div class="flex">
+      <div class="flex__1-3 contacts__item">
+        <svg class="icon contacts__icon">
+          <use xlink:href="./assets/symbol.svg?v=2#icon_contacts_phone"></use>
+        </svg>
+        <a 
+          href="tel:{{ site_phone }}" 
+          class="contacts__label"
+          onclick="fbq('track', 'Contact');"
+        >
+          {{ site_phone }}
+        </a>
+      </div>
+      <div class="flex__1-3 contacts__item">
+        <svg class="icon contacts__icon">
+          <use xlink:href="./assets/symbol.svg?v=1#icon-contacts-address"></use>
+        </svg>
+        <span
+          class="contacts__label"
+        >
+          {{ site_adress }} 
+          <hr>
+          <div class="contacts__label--small">
+            <b>Отдел продаж:</b> 
+            <br>
+            {{ site_adress_two }}
+          </div>
+        </span>
+      </div>
+      <div class="flex__1-3 contacts__item">
+        <svg class="icon contacts__icon">
+          <use xlink:href="./assets/symbol.svg?v=2#icon-contacts-insta"></use>
+        </svg>
+        <a 
+          href="https://instagram.com/{{ site_insta }}" 
+          target="_blank"
+          class="contacts__label"
+        >
+          {{ site_insta }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

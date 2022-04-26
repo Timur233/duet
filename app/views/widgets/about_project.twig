@@ -1,0 +1,28 @@
+<section id="about-project" class="about-project section">
+    <div class="container">
+        <div class="section-title">
+            <h2 class="section-title__h2">{{ about_title }}</h2>
+        </div>
+        <div class="flex">
+            <div class="flex__1-2 about-project__left">
+                <div class="about-project__desc">
+                    {{ about_desc|raw }}
+                </div>
+                <a href="#locations" class="btn btn--gradient">
+                    {{ translate["select_flat"] }}
+                </a>
+            </div>
+            <div class="flex__1-2 about-project__right">
+                <div class="benefits flex">
+                    {% for item in about_advantages %}
+                        <div class="benefits__item flex__1-2">
+                            <img src="https://cms.abpx.kz{{ item.children[0].settings.image.path }}" alt="#" class="benefits__img">
+                            <strong class="benefits__title">{{ item.children[1].settings.text }}</strong>
+                            <span class="benefits__info">{{ item.children[1].settings.text }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

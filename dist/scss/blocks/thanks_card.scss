@@ -1,0 +1,40 @@
+.thanks-card {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: spacer(20) sapcer(4);
+
+    &::before {
+        content: '';
+        position: absolute;
+        
+        @include cover-position;
+        z-index: 0;
+        background: rgba($black, .4);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        
+        @include cover-position;
+        z-index: 0;
+        background: linear-gradient(180deg, #000000 -8.65%, rgba(0, 0, 0, 0) 36.26%), linear-gradient(0deg, rgba(0, 0, 0, 0.7) -18.33%, rgba(0, 0, 0, 0) 48.52%);
+    }
+
+    &__block {
+        position: relative;
+        font-size: 20px;
+        font-weight: 300;
+        color: $white;
+        z-index: 10;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 28px;
+        font-weight: 300;
+        color: $white;
+        line-height: 1;
+    }
+} 

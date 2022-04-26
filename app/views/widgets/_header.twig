@@ -1,0 +1,55 @@
+<header class="main-header">
+   <div class="container-fluid">
+      <div class="main-header__content">
+         <div class="menu-toggle main-header__menu-toggle">
+            <span class="menu-toggle__line"></span>
+            <span class="menu-toggle__line"></span>
+            <span class="menu-toggle__line"></span>
+         </div>
+         <div class="logo-block main-header__logos">
+            <span class="logo-block__link logo-block__link--exin">
+               <img src="https://cms.abpx.kz{{ exin_logo.path }}" class="logo-block__img" alt="Exclusive Qurylys">
+               <img src="https://cms.abpx.kz{{ exin_second_logo.path }}" class="logo-block__img logo-block__img--dark" alt="Exclusive Qurylys">
+            </span>
+            <a href="/" class="logo-block__link">
+               <img src="https://cms.abpx.kz{{ site_logo.path }}" class="logo-block__img" alt="Qargaly City">
+               <img src="https://cms.abpx.kz{{ site_second_logo.path }}" class="logo-block__img logo-block__img--dark" alt="Qargaly City">
+            </a>
+         </div>
+         <div class="navigate main-header__navigate">
+            <nav class="navigate__block">
+               <a href="#about-project" class="navigate__link">{{ translate['about_of_project'] }}</a>
+               <a href="#gallery" class="navigate__link">{{ translate['gallery'] }}</a>
+               <a href="#advantages" class="navigate__link">{{ translate['advantages'] }}</a>
+               <a href="#locations" class="navigate__link">{{ translate['select_location'] }}</a>
+               {# <a href="#building-steps" class="navigate__link">{{ translate['building_steps'] }}</a> #}
+               <a href="#contacts" class="navigate__link">{{ translate['contacts'] }}</a>
+            </nav>
+         </div>
+         <div class="lang-switcher main-header__lang">
+            <a 
+              href="{% if lang != 'ru' %}{{ base_url }}{% else %}#{% endif %} " 
+              class="lang-switcher__item main-header__lang-link {% if lang == 'ru' %}lang-switcher__item--active{% endif %}">RU</a>
+            <a 
+              href="{% if lang != 'kk' %}{{ base_url }}kk{% else %}#{% endif %}" 
+              class="lang-switcher__item main-header__lang-link {% if lang == 'kk' %}lang-switcher__item--active{% endif %}">KZ</a>
+         </div>
+         <div class="main-contact main-header__contact">
+            <div class="main-contact__block">
+               <a href="tel:{{ site_phone }}" onclick="fbq('track', 'Contact');" class="main-contact__phone">
+                  <img src="./assets/img/phone-icon.svg" alt="Контакты" class="icon main-contact__phone-icon">
+                  {{ site_phone }}
+               </a>
+               <button class="btn btn--gradient" data-modal="#callback-modal">
+                  {{ translate['callback_title'] }}
+               </button>
+            </div>
+         </div>
+         <div class="mobile-contact main-header__mobile-contact">
+            <a href="tel:{{ site_phone }}" onclick="fbq('track', 'Contact');">
+               <img src="./assets/img/phone-icon.svg" alt="Контакты" class="icon mobile-contact__phone-icon">
+            </a>
+         </div>
+      </div>
+   </div>
+</header>

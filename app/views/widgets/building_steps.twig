@@ -1,0 +1,36 @@
+{% if building_steps is defined and building_steps is not empty %}
+    <section id="building-steps" class="building-steps section">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="section-title__h2">{{ steps_title }}</h2>
+                <div class="section-title__control">
+                    <div class="swiper-button-prev building-steps__controll"></div>
+                    <div class="swiper-button-next building-steps__controll"></div>
+                </div>
+            </div>
+
+            <div class="building-steps__swiper swiper-container">
+                <div class="swiper-wrapper">
+                    {% for item in building_steps %}
+                        <div 
+                            class="swiper-slide building-steps__slide" 
+                            style="background-image: url('https://cms.abpx.kz{{ item.preview }}')"
+                        >
+                            {% if item.gallery %}
+                                <a 
+                                    class="building-steps__link" 
+                                    href="#" 
+                                    data-gallery-images="{% for img in item.gallery %}https://cms.abpx.kz{{ img.styles[0].path }}{% if loop.last == false  %},{% endif%}{% endfor %}"  
+                                    onclick="() => {frontend.lightBox(this.getAttribute('data-gallery-images')); return false}">
+                                    <div class="step-information">
+                                        <h3 class="building-steps__title">{{ translate[item.format_date.month] }} {{ item.format_date.year }}</h3>
+                                    </div>
+                                </a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

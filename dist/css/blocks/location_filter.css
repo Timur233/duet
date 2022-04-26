@@ -1,0 +1,17 @@
+.locations__filter {
+  display: flex;
+  flex-direction: column;
+  padding-right: spacer(10); }
+
+.locations-filter__label {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: spacer(1); }
+
+.locations-filter__group {
+  margin-bottom: spacer(4); }
+
+.filter-group__btn {
+  line-height: 1.9; }
+  .filter-group__btn:not(:last-child) {
+    margin-right: spacer(2); }

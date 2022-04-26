@@ -1,0 +1,37 @@
+.main-header {
+  width: 100%;
+  background-color: black; }
+  .main-header__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center; }
+  .main-header--sticky {
+    position: fixed; }
+  .main-header__logos {
+    margin-right: auto; }
+  .main-header__navigate {
+    margin-right: spacer(10); }
+
+.logo-block {
+  display: flex;
+  flex-wrap: nowrap; }
+  .logo-block__link:not(:last-child) {
+    margin-right: spacer(6); }
+
+.navigate__block {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.navigate__link {
+  margin-right: spacer(6);
+  font-size: 18px;
+  line-height: 1.4; }
+
+.main-contact__block {
+  display: flex;
+  flex-direction: column; }
+
+.main-contact__phone {
+  font-size: 18px; }

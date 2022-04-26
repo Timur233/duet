@@ -1,0 +1,68 @@
+.about-developer {
+    &__block {
+        padding: spacer(15) spacer(13);
+        border-radius: softer(7);
+        box-shadow: $box-shadow;
+        background-color: $white; 
+
+        @media (max-width: 648px) {
+            padding: spacer(7);
+        }
+    }
+
+    &__logo {
+        width: 120px;
+        margin-bottom: spacer(6);
+    }
+
+    &__info {
+        padding-right: spacer(20);
+
+        @media (max-width: 830px) {
+            width: 100%;
+            padding-bottom: spacer(10);
+            padding-right: 0;
+        }
+    }
+
+    &__items {
+        @media (max-width: 830px) {
+            width: 100%;
+        }
+    }
+
+}
+
+.developer-items {
+
+    &__item {
+        margin-bottom: spacer(5);
+
+        @media (max-width: 648px) {
+            width: 50%;
+        }
+
+        @media (max-width: 440px) {
+            &:not(:nth-child(2n)) {
+                padding-right: spacer(3);
+            }
+        }
+    }
+
+    &__title {
+        font-size: 28px;
+        color: $orange;
+        background: $button-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @media (max-width: 990px) {
+            font-size: 24px;
+        }
+
+        @media (max-width: 440px) {
+            font-size: 20px;
+        }
+    }
+
+}

@@ -1,0 +1,93 @@
+.sidebar {
+    transform: translateX(-100%);
+    transition: transform $slow-animation ease-out;
+
+    &--open {
+        transform: translateX(0);
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        padding: spacer(22) spacer(4) spacer(4);
+        z-index: 11;
+        text-align: center;
+        background-color: rgba($white, .9);
+        
+        @include cover-position;
+        
+    }
+
+    &__lang {
+        margin-bottom: spacer(5);
+    }
+
+    &__callback {
+        margin-top: auto;
+    }
+
+    &__link {
+        display: flex;
+        justify-content: center;
+        margin-bottom: spacer(3);
+    }
+
+    &__insta-icon {
+        width: 18px;
+        height: 22px;
+        margin-right: spacer(2);
+    }
+
+    &__phone-icon {
+        width: 15px;
+        height: 22px;
+        margin-right: spacer(2);
+        filter: invert(1);
+    }
+}
+
+.lang-switcher {
+    font-size: 20px;
+    
+    &__item {
+        position: relative;
+        font-weight: 600;
+        color: $orange;
+
+        &--active {
+            color: $text;
+        }
+
+        &:first-child {
+            margin-right: spacer(3);
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 22px;
+                right: -9px;
+                top: 2px;
+                bottom: 0;
+                background: $text;
+            }
+        }
+    }
+}
+
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+
+    &__link {
+        display: block;
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: spacer(3);
+
+        &:hover {
+            color: $orange;
+        }
+    }
+}

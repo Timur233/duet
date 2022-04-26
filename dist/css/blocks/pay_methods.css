@@ -1,0 +1,37 @@
+.pay-methods__list {
+  padding-top: spacer(5); }
+
+.pay-methods__item {
+  padding: 0 spacer(20);
+  text-align: center; }
+  @media (max-width: 1200px) {
+    .pay-methods__item {
+      padding: 0 spacer(10); } }
+  @media (max-width: 1000px) {
+    .pay-methods__item {
+      padding: 0 spacer(3); } }
+  @media (max-width: 830px) {
+    .pay-methods__item {
+      width: 50%;
+      padding: 0 spacer(3); }
+      .pay-methods__item:not(:last-child) {
+        margin-bottom: spacer(8); } }
+  @media (max-width: 500px) {
+    .pay-methods__item {
+      width: 100%;
+      padding: 0 spacer(10); } }
+
+.pay-methods__icon {
+  display: inline-block;
+  height: 80px;
+  margin-bottom: spacer(5); }
+  @media (max-width: 500px) {
+    .pay-methods__icon {
+      width: 60px; } }
+
+.pay-methods__name {
+  font-size: 20px;
+  font-weight: 400; }
+  @media (max-width: 500px) {
+    .pay-methods__name {
+      font-size: 18px; } }

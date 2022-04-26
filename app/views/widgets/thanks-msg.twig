@@ -1,0 +1,12 @@
+<div class="form_return">
+    {% if userName %}
+    <p class='mb-1'>{{ translater.thanks }}, <strong>{{ userName }}</strong>!</p>
+    <p>
+        {{ translater.promise }}
+    </p>
+    {% else %}
+    <p class='mb-1'><strong>{{ translater.thanks }}!</strong></p>
+    <p>{{ translater.promise }}</p>
+    <a href="" class="mb-0 btn btn-gradient" data-bs-dismiss="modal" aria-label="Close">{{ translater.close }}</a>
+    {% endif %}
+</div>

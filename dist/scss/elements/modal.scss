@@ -1,0 +1,68 @@
+.modal {
+    position: relative;
+    z-index: 15;
+
+    &--hidden {
+        display: none;
+    }
+
+    &__dialog {
+        max-width: 100%;
+        width: 460px;
+        position: fixed;
+
+        &--center {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        z-index: 1; 
+    }
+
+    &__content {
+        position: relative;
+        padding: spacer(8) spacer(10);
+        margin: spacer(4);
+        border-radius: softer(6);
+        background-color: $white;
+
+        @media (max-width: 830px) {
+            padding: spacer(6) spacer(6);
+        }
+    }
+
+    &__title {
+        margin-bottom: spacer(4);
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    &__btn-close {
+        position: absolute;
+        padding: spacer(2);
+        right: spacer(4);
+        top: spacer(4);
+        border-radius: softer(4);
+        cursor: pointer;
+        background: none;
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+
+    &__icon-close {
+        width: 16px;
+        height: 16px;
+    }
+
+    &__shadow {
+        position: fixed;
+        
+        @include cover-position;
+
+        background: $black;
+        opacity: .7;
+    }
+}

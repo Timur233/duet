@@ -1,0 +1,12 @@
+.benefits {
+  padding-left: spacer(15);
+  padding-top: spacer(15); }
+  .benefits__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: spacer(7); }
+  .benefits__img {
+    margin-bottom: spacer(4); }
+  .benefits__title {
+    margin-bottom: spacer(2); }

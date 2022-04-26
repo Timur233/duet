@@ -1,0 +1,31 @@
+<section id="gallery" class="main-gallery section section--gray">
+    <div class="container">
+        <div class="section-title">
+            <h2 class="section-title__h2">Галерея</h2>
+            <div class="section-title__control">
+                <div class="swiper-button-prev main-gallery__controll"></div>
+                <div class="swiper-button-next main-gallery__controll"></div>
+            </div>
+        </div>
+        <div class="gallery-swiper swiper-container d-block d-md-none">
+            <div class="swiper-wrapper">
+                {% for item in gallery_items %}
+                    <div class="main-gallery__item swiper-slide">
+                        <a 
+                            href="https://cms.abpx.kz{{ item.path }}" 
+                            class="main-gallery__link" 
+                            data-fslightbox="first-lightbox"
+                        >
+                            <img 
+                                class="main-gallery__img"
+                                src="https://cms.abpx.kz{{ item.path }}" 
+                                alt="{{ item.meta.title }}"
+                            >
+                        </a>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>

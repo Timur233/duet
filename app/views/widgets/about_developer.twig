@@ -1,0 +1,27 @@
+<section id="about-developer" class="about-developer section section--gray">
+    <div class="container">
+        <div class="section-title">
+            <h2 class="section-title__h2">{{ company_title }}</h2>
+        </div>
+        <div class="about-developer__block">
+            <div class="flex">
+                <div class="flex__1-2 about-developer__info">
+                    <img src="https://cms.abpx.kz{{ company_logo.path }}" alt="{{ company_title }}" class="about-developer__logo">
+                    {{ company_about|raw }}
+                </div>
+                <div class="flex__1-2 about-developer__items">
+                    <div class="flex developer-items">
+                        {% for item in company_items %}
+                            <div class="flex__1-3 developer-items__item">
+                                <h3 class="developer-items__title">
+                                    {{ item.children[0].settings.text }}
+                                </h3>
+                                {{ item.children[1].settings.text|raw }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

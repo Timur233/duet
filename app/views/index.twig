@@ -1,7 +1,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1200">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{{ site_title }}</title>
     <link rel="shortcut icon" href="https://cms.abpx.kz/{{ site_favicon.path }}" type="image/png">
@@ -26,10 +26,6 @@
 
     <div class="sidebar position-fixed">
       <nav class="p-4 text-center h-100" style="display: flex; flex-direction: column;">
-        <a href="#" class="close" onclick="frontend.sidebar('open'); return false"><span></span><span></span></a>
-        <a href="#" onclick="frontend.sidebar('open');">
-          <img src="https://cms.abpx.kz{{ site_second_logo.path }}" alt="">
-        </a>
         <ul>
           <li>
             <a href="#home" onclick="frontend.sidebar('open');">Главная</a>
@@ -55,16 +51,34 @@
         </ul>
         <div class="call">
           <a href="tel:{{ site_phone }}" class="phone" onclick="frontend.sidebar('open');"><i class="fas fa-phone-alt me-2"></i> {{ site_phone }}</a>
-          <a href="" class="btn btn-gradient" data-bs-toggle="modal" data-bs-target="#callbackModal" onclick="frontend.sidebar('open');">Обратная связь</a>
+          <div class="callback-btn">
+            <a 
+              href="#" 
+              class="btn btn-gradient" 
+              data-bs-toggle="modal" 
+              data-bs-target="#callbackModal" 
+              onclick="frontend.sidebar('open');"
+            >
+              Обратная связь
+            </a>
+          </div>
         </div>
       </nav>
     </div>
 
-    <header class="position-absolute align-items-center w-100" style="z-index: 9">
+    <header class="position-absolute align-items-center w-100" style="z-index: 11111">
       <div class="container">
         <div class="row">
 
-          <div class="col-4 col-md-3 col-lg-3 col-xl-2 col-xxl-1 d-flex brand align-items-center justify-content-start">
+          <div class="col d-flex d-lg-none pe-0 menu-toggle-wrapper">
+            <div class="menu-toggle main-header__menu-toggle" onclick="frontend.sidebar('close'); return false">
+                <span class="menu-toggle__line"></span>
+                <span class="menu-toggle__line"></span>
+                <span class="menu-toggle__line"></span>
+            </div>
+          </div>
+
+          <div class="col-4 col-md-3 col-lg-2 col-xl-2 col-xxl-1 d-flex brand align-items-center justify-content-start">
             <a class="navbar-brand d-inline-block py-2 mr-1" target="_blank" href="https://exin.kz/">
               <img src="https://cms.abpx.kz{{ exin_logo.path }}" class="px-2 py-1" />
             </a>
@@ -98,7 +112,7 @@
             </ul>
           </div>
           
-          <div class="col-4 col-md-5 col-lg-3 d-flex align-items-center justify-content-end menu">
+          <div class="col-5 col-md-5 col-lg-3 ms-auto d-flex align-items-center justify-content-end menu">
             <a href="tel:{{ site_phone }}" id="phoneGroup">
               <span class="icon"><span class="icon-phone"></span></span>
               <span class="phoneNumber">{{ site_phone }}</span><br>
@@ -115,7 +129,7 @@
       <div class="container position-relative d-flex align-items-center h-100">
         <div class="section-slider-content">
           <div class="row">
-            <div class="col-md-11 col-lg-11 ms-auto text-left">
+            <div class="col-md-11 col-lg-11 ms-md-none ms-lg-auto text-left">
               <h1>{{ slide_title }}<br><span class="gold">{{ slide_title_two }} </span></h1>
               <div class="slider_content">
                 <p class="mb-2">{{ slide_desc }}</p>
@@ -159,14 +173,14 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-md-12 col-lg-5 order-0 order-md-1 order-lg-0 mb-5 mt-0 mb-md-0 mt-md-5 mb-lg-0 mt-lg-0">
+          <div class="d-none d-lg-block col-md-12 col-lg-4 col-xl-5 order-0 order-md-1 order-lg-0 mb-5 mt-0 mb-md-0 mt-md-5 mb-lg-0 mt-lg-0">
             <div class="about-img">
               <img src="https://cms.abpx.kz{% if theme == 'white' %}{{ about_img.path }}{% else %}{{ about_img_two.path }}{% endif %}" alt="{{ about_title }} {{ about_title_two }}" style="transform: translateY(20%);">
             </div>
           </div>
 
-          <div class="col-md-12 col-lg-7 d-flex align-items-center order-1 order-md-0 order-lg-1">
-            <div class="about_block text-end">
+          <div class="col-md-12 col-lg-8 col-xl-7 d-flex align-items-center order-1 order-md-0 order-lg-1">
+            <div class="about_block text-start text-md-center text-lg-end">
               <h2 class="sectionTitle">
                 {{ about_title }}
                 <span class="gold">{{ about_title_two }}</span>
@@ -174,9 +188,9 @@
               {{ about_desc|raw }}
               <div class="row">
                 <div class="col-lg-10 ms-auto pt-3">
-                  <div class="row about-items justify-content-end">
+                  <div class="row about-items justify-content-center justify-content-lg-end">
                     {% for item in about_items %}
-                      <div class="col-lg-3">
+                      <div class="col-6 col-xs-4 col-md-3">
                         <img 
                           class="about-items__img"
                           src="https://cms.abpx.kz{{ item.children[0].settings.image.path }}" 
@@ -471,7 +485,7 @@
       <div class="container-fluid container-xxl">
         <div class="row">
           <div class="col-12 col-md-6 col-lg-6 align-items-center d-flex order-1 order-md-0">
-            <div class="content ps-0 pe-5 ps-md-5 py-5 py-md-5 text-start">
+            <div class="content ps-0 pe-5 ps-lg-3 ps-xl-5 py-5 py-md-3 text-start">
               <h2 class="sectionTitle">
                 {{ concept_title_1 }}
               </h2>
@@ -496,7 +510,7 @@
             </div>
           </div>
           <div class="col-md-6 col-lg-6 align-items-center d-flex">
-            <div class="content ps-4 pe-4 ps-md-5 py-5 py-md-5">
+            <div class="content ps-4 pe-4 ps-lg-3 ps-xl-5 py-5 py-md-3">
               <h2 class="sectionTitle">
                 {{ concept_title_2 }}
               </h2>
@@ -555,7 +569,7 @@
     <section id="aboutExin" class="aboutExin pb-6">
       <div class="container pb-4">
         <div class="row bg-white ms-0">
-          <div class="col-5 ps-0">
+          <div class="col-12 col-lg-5 ps-0">
             <div class="img-block">
               <img src="https://cms.abpx.kz{{ exin_image.path }}" alt="">
               <div class="exin-info position-absolute">
@@ -563,7 +577,7 @@
               </div>
             </div>
           </div>
-          <div class="col-7 ps-5 align-items-center d-flex position-relative">
+          <div class="col-12 col-lg-7 pb-5 pt-3 ps-5 pe-5 pe-lg-3 align-items-center d-flex position-relative">
             <div class="content">
               <h2 class="sectionTitle">
                 {{ exin_title }}

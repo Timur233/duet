@@ -52,42 +52,41 @@ var frontend = (function frontendModule() {
     }
 
     function sideBarToggle(condition) {
-        let button = document.getElementById('sidebarToggle')
-        let sideBar = document.querySelector('.sidebar')
-        let bars = document.querySelector('.ham5')
-        let sideBarPhone = document.querySelector('.call .phone')
-        let mainPhone = document.querySelector('.contact-block__phone')
-
-        sideBarPhone.href = 'tel:' + mainPhone.textContent
-        sideBarPhone.textContent = mainPhone.textContent
+        let sideBar = document.querySelector('.sidebar');
+        const toggleBtn = document.querySelector('.menu-toggle');
 
         if (condition == 'open') {
+            toggleBtn.classList.remove('menu-toggle--open');
+            toggleBtn.setAttribute('onclick', 'frontend.sidebar(\'close\'); return false');
             document.body.classList.remove('sidebarOpen')
             sideBar.classList.remove('open')
-            button.setAttribute('data-condition', '')
         } else {
+            toggleBtn.classList.add('menu-toggle--open');
+            toggleBtn.setAttribute('onclick', 'frontend.sidebar(\'open\'); return false');
             document.body.classList.add('sidebarOpen')
             sideBar.classList.add('open')
-            button.setAttribute('data-condition', 'open')
         }
-
-        bars.classList.toggle('active')
     }
 
     function advantagesCarousel() {
 
         let slidesPerView = 3;
-        let margin = 80;
+        let margin = 60;
         let effect = 'slide';
         let centeredSlides = true;
 
-        if (window.innerWidth < 768) {
-            slidesPerView = 1.3
-            effect = ''
-            center = false
-            margin = 25
+        if (window.innerWidth < 990) {
+            slidesPerView = 2;
+            margin = 60;
+            effect = 'slide';
         }
-        if (window.innerWidth < 576) {
+
+        if (window.innerWidth <= 768) {
+            slidesPerView = 1.6
+            margin = 60
+        }
+
+        if (window.innerWidth <= 576) {
             slidesPerView = 1.2
         }
 
@@ -113,15 +112,26 @@ var frontend = (function frontendModule() {
 
         let slidesPerView = 4
         let margin = 25
+
+        if (window.innerWidth <= 1200) {
+            slidesPerView = 3;
+        }
+
+        if (window.innerWidth <= 990) {
+            slidesPerView = 2.3;
+        }
+
         if (window.innerWidth < 768) {
-            slidesPerView = 1.3
+            slidesPerView = 1.6
             effect = ''
             center = false
             margin = 25
         }
+
         if (window.innerWidth < 576) {
             slidesPerView = 1.2
         }
+
         var steps = new Swiper('.steps-swiper', {
             loop: false,
             slidesPerView: slidesPerView,
@@ -145,7 +155,7 @@ var frontend = (function frontendModule() {
         //Set autoHeight
         let steps_items = document.querySelectorAll('.steps-swiper .swiper-slide')
         steps_items.forEach(function (step) {
-            let height = (step.offsetWidth / 3) * 4.70
+            let height = (step.offsetWidth / 3) * 4.50
             step.style.height = height
         })
 

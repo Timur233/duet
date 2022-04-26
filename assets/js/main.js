@@ -101,6 +101,10 @@ var frontend = (function frontendModule() {
             mousewheelControl: true,
             lazyLoading: true,
             spaceBetween: margin,
+            navigation: {
+                nextEl: ".advant-next",
+                prevEl: ".advant-prev",
+            },
         })
 
     }
@@ -126,6 +130,10 @@ var frontend = (function frontendModule() {
             mousewheelControl: true,
             lazyLoading: true,
             spaceBetween: margin,
+            navigation: {
+                nextEl: ".building-steps-next",
+                prevEl: ".building-steps-prev",
+            },
         })
 
         buildingStepsAutoHeight()
@@ -312,6 +320,40 @@ var frontend = (function frontendModule() {
 
         form.innerHTML = await response.text()
 
+    }
+
+    function activeMenuItem(scroll) {
+        const menuItems = document.querySelectorAll('.nav-menu a');
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const checkActivation = (scroll, elTop, elBottom) => { 
+            if (scroll >= elTop && scroll <= elBottom) {
+                return true;
+            }
+
+            return false;
+        }
+        const selectElement = (element) => {
+            const oldSelect = document.querySelector('.active');
+
+            if (oldSelect) oldSelect.classList.remove('active');
+            element.classList.add('active');
+        }
+
+        menuItems.forEach(item => {
+            const el = document.querySelector(item.getAttribute('href'));
+
+            if (el) {
+              const isSelected = checkActivation(
+                    scroll, 
+                    el.offsetTop - headerHeight, 
+                    (el.offsetTop + el.offsetHeight) - headerHeight
+                );
+
+              if (isSelected) {
+                  selectElement(item);
+              }
+            }
+        });
     }
 
     var newFilter = (function creiateFilter() {
@@ -586,6 +628,9 @@ var frontend = (function frontendModule() {
                 header.classList.remove('sticky')
             }
         }
+
+        activeMenuItem(window.pageYOffset);
+
     }
 
     return {

@@ -118,7 +118,10 @@
             <div class="col-md-11 col-lg-11 ms-auto text-left">
               <h1>{{ slide_title }}<br><span class="gold">{{ slide_title_two }} </span></h1>
               <div class="slider_content">
-                <p class="mb-4">{{ slide_desc }}</p>
+                <p class="mb-2">{{ slide_desc }}</p>
+                <p class="mb-4">
+                  <span class="gold">{{ slide_price }} тг./м<sup>2</sup></span>
+                </p>
                 <a href="#flats" class="btn btn-gradient mt-2">Выбрать квартиру</a>
               </div>
             </div>
@@ -403,10 +406,7 @@
 
     </section>
 
-    <!--style="background-image: linear-gradient(0deg, #F8F8F8 0%, rgba(255, 255, 255, 0) 38.54%), linear-gradient(180deg, #F8F8F8 0%, rgba(255, 255, 255, 0) 53.12%), linear-gradient(0deg, rgba(255, 255, 255, 0.37), rgba(255, 255, 255, 0.37)), url(https://cms.abpx.kz{{ advant_img.path }});"-->
-    <section id="advantages" class="advantages bg-white py-6"
-
-    >
+    <section id="advantages" class="advantages bg-white py-6">
       <div class="container py-3">
         <h2 class="sectionTitle text-center">
           {{ advant_title|raw }}
@@ -431,6 +431,10 @@
               </div>
             {% endfor %}
           </div>
+          <div class="advant-navigation">
+            <div class="swiper-button-prev advant-prev"></div>
+            <div class="swiper-button-next advant-next"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -453,6 +457,10 @@
             </div>
             {% endfor %}
           </div>
+          <div class="gallery-navigation">
+            <div class="swiper-button-prev gallery-prev"></div>
+            <div class="swiper-button-next gallery-next"></div>
+          </div>
 
         </div>
 
@@ -463,7 +471,7 @@
       <div class="container-fluid container-xxl">
         <div class="row">
           <div class="col-12 col-md-6 col-lg-6 align-items-center d-flex order-1 order-md-0">
-            <div class="content ps-0 pe-5 ps-md-0 py-5 py-md-5 text-start">
+            <div class="content ps-0 pe-5 ps-md-5 py-5 py-md-5 text-start">
               <h2 class="sectionTitle">
                 {{ concept_title_1 }}
               </h2>
@@ -505,6 +513,12 @@
         <h2 class="sectionTitle">
           {{ steps_title }}
           <span class="gold">{{ steps_color_title }}</span>
+
+          <div class="building-steps-navigation">
+            <div class="swiper-button-prev building-steps-prev"></div>
+            <div class="swiper-button-next building-steps-next"></div>
+          </div>
+
         </h2>
 
         <div class="steps-swiper swiper-container py-4">

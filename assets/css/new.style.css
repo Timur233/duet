@@ -1924,3 +1924,21 @@ body.theme-dark footer#footer {
 img.fslightbox-source {background: #fff;}
 
 .advantages__stars {display: flex;justify-content: center;gap: 4px;font-size: 28px;color: #c8a020;}
+
+.advant-navigation {position: relative;text-align: center;padding: 40px 0 0 0;}
+
+.advant-next, .advant-prev {position: relative;margin: 0;right: auto;left: auto;top: auto;width: auto;height: auto;display: inline-block;transform: none;}
+
+.advant-next:after, .advant-prev:after {font-size: 34px;}
+
+.advant-next {margin-left: 12px;}
+
+.advant-prev {margin-right: 12px;}
+
+.building-steps-navigation {right: 0px;top: 0;width: auto;display: flex;gap: 16px;justify-content: flex-end;position: absolute;height: auto;}
+
+.swiper-button-disabled {}
+
+.building-steps-prev, .building-steps-next {left: auto;right: auto;position: relative;transform: none;top: auto;margin: 0px;}
+
+.building-steps-prev:after, .building-steps-next:after {position: relative;font-size: 32px;}

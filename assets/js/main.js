@@ -5,13 +5,13 @@ var frontend = (function frontendModule() {
     }
 
     function yandexMap() {
-        searchMap = new ymaps.Map('map', {
-            center: [43.240643643765466,76.93736234688615], //43.318978, 76.897165
-            zoom: 15,
+        const searchMap = new ymaps.Map('map', {
+            center: [43.247411,76.942777], //43.318978, 76.897165
+            zoom: 14,
             controls: [],
         });
 
-        (marker = new ymaps.Placemark([43.240643643765466,76.93736234688615],
+        const marker = new ymaps.Placemark([43.240643643765466,76.93736234688615],
             {
                 hintContent: 'Жилой комплекс',
                 balloonContent: 'Exclusive Duet',
@@ -22,9 +22,25 @@ var frontend = (function frontendModule() {
                 iconImageSize: [81.16, 110],
                 iconImageOffset: [-40.58, -110],
             }
-        )),
-            searchMap.geoObjects.add(marker);
+        );
+
+        const exinMarker = new ymaps.Placemark([43.2497517919829,76.9482395498707],
+            {
+                hintContent: 'Exclusive Qurylys',
+                balloonContent: 'Центральный офис продаж',
+            },
+            {
+                iconLayout: 'default#image',
+                iconImageHref: 'assets/img/markers/map-marker-exin.svg',
+                iconImageSize: [81.16, 110],
+                iconImageOffset: [-40.58, -110],
+            }
+        );
+        
+        searchMap.geoObjects.add(marker);
+        searchMap.geoObjects.add(exinMarker);
         searchMap.behaviors.disable('scrollZoom');
+        searchMap.controls.add('zoomControl');
 
     }
 

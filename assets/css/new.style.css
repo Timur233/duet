@@ -669,6 +669,8 @@ section#contacts {
 .callback-form {
     position: relative;
     pointer-events: all;
+    max-width: 450px;
+    margin: auto;
 }
 
 .steps-swiper .swiper-wrapper {
@@ -1457,9 +1459,11 @@ section#photGallery img {
     margin-top: 2px;
 }
 
-.contact>p>span {
+.contact>p>span, .contact>p>a {
     margin-right: 30px;
     display: inline-block;
+    color: #333;
+    text
 }
 
 section#advantages {
@@ -1670,6 +1674,8 @@ img.fslightbox-source {background: #fff;}
 .building-steps-prev, .building-steps-next {left: auto;right: auto;position: relative;transform: none;top: auto;margin: 0px;}
 
 .building-steps-prev:after, .building-steps-next:after {position: relative;font-size: 32px;}
+
+.contacts-icon {width: 16px;margin-right: 9px;display: inline-block;}
 
 .menu-toggle-wrapper {
     flex: 0;

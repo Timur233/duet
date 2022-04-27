@@ -608,8 +608,27 @@
                   Контакты
                 </h2>
                 <div class="contact mb-4 pb-1">
-                  <p><i class="icon-map"></i> г. Алматы, ул. Абая д. ХХХ </p>
-                  <p><span><i class="icon-insta"></i>{{site_insta}}</span><span><i class="icon-phone-call"></i>{{ site_phone }}</span></p>
+                  <p>
+                    <i class="icon-map"></i>
+                    {{ site_adress }} 
+                  </p>
+                  <p>
+                    <img 
+                      class="contacts-icon" 
+                      src="https://cms.abpx.kz/storage/uploads/2022/04/27/6269134970c48favicon.svg"
+                    > 
+                    {{ site_adress_exin }} 
+                  </p>
+                  <p>
+                    <a href="https://www.instagram.com/{{ site_insta }}" target="_blanc">
+                      <i class="icon-insta"></i>
+                      {{ site_insta }}
+                    </a>
+                    <a href="tel:{{ site_phone }}">
+                      <i class="icon-phone-call"></i>
+                      {{ site_phone }}
+                    </a>
+                  </p>
                 </div>
                 
                 <h3 class="text-capitalize mb-4">Оставить заявку</h3>

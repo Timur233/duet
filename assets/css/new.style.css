@@ -2018,3 +2018,7 @@ img.fslightbox-source {background: #fff;}
         display: none;
     }
 }
+
+.footer-content__bottom {width: 100%;position: relative;text-align: center;padding-top: 40px;}
+
+.footer-content__bottom > a {font-size: 12px;color: #fff;}

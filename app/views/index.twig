@@ -326,7 +326,7 @@
             </div>
           </div>
           <div class="col-12 col-lg-6 d-inline-block d-md-flex">
-            <div class="w-100 overflow-hidden plansCarousel position-relative">
+            <div class="w-100 overflow-hidden plansCarousel box-shadow position-relative">
               <div class="swiper-flats">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
@@ -418,6 +418,30 @@
         var offersAll = {{ offers|raw }}
       </script>
 
+    </section>
+
+    <section id="payMethods" class="pay-methods pb-6">
+      <div class="container">
+        <div class="pay-methods__block box-shadow">
+          <h2 class="sectionTitle pay-methods__title-block">
+            {{ pay_methos_title }}
+          </h2>
+          <div class="pay-methods__list">
+            {% for item in pay_methos_items %}
+              <div class="pay-methods__item">
+                <img 
+                  class="pay-methods__img" 
+                  src="https://cms.abpx.kz{{ item.children[0].settings.image.path }}" 
+                  alt="{{ item.children[1].settings.text }}"
+                >
+                <span class="pay-methods__title">
+                  {{ item.children[1].settings.text }}
+                </span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="advantages" class="advantages bg-white py-6">
@@ -568,7 +592,7 @@
 
     <section id="aboutExin" class="aboutExin pb-6">
       <div class="container pb-4">
-        <div class="row bg-white ms-0">
+        <div class="row bg-white box-shadow ms-0">
           <div class="col-12 col-lg-5 ps-0">
             <div class="img-block">
               <img src="https://cms.abpx.kz{{ exin_image.path }}" alt="">

@@ -1677,6 +1677,22 @@ img.fslightbox-source {background: #fff;}
 
 .contacts-icon {width: 16px;margin-right: 9px;display: inline-block;}
 
+.pay-methods__block {background: #fff;padding: 40px;}
+
+.pay-methods__list {display: flex; flex-wrap: wrap;}
+
+.pay-methods__item {flex: 0 0 25%;display: flex;align-items: flex-start; align-items: center; gap: 16px;padding-right: 24px;}
+
+.pay-methods__img {width: 54px;}
+
+.pay-methods__title {font-size: 14px;font-weight: 500;}
+
+.pay-methods__title-block {font-size: 22px !important;line-height: 1;margin-bottom: 34px;}
+
+.box-shadow { box-shadow: 0 6px 9px -10px #b6b6b6; }
+
+.fslightbox-source {min-width: 600px;min-height: 600px;}
+
 .menu-toggle-wrapper {
     flex: 0;
     align-items: center;
@@ -1806,6 +1822,11 @@ img.fslightbox-source {background: #fff;}
 }
 
 @media (max-width: 990px) {
+    .pay-methods__item {
+        flex: 0 0 50%;
+        margin-bottom: 28px;
+    }
+
     .number {
         width: 100%;
     }
@@ -1962,6 +1983,11 @@ img.fslightbox-source {background: #fff;}
 }
 
 @media (max-width: 576px) {
+
+    .pay-methods__item {
+        flex: 0 0 100%;
+        padding: 0;
+    }
 
     .navbar-brand {
         margin-right: 4px;

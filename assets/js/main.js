@@ -145,7 +145,7 @@ var frontend = (function frontendModule() {
         }
 
         if (window.innerWidth < 576) {
-            slidesPerView = 1.2
+            slidesPerView = 1.4
         }
 
         var steps = new Swiper('.steps-swiper', {

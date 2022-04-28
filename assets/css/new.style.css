@@ -2134,6 +2134,8 @@ img.fslightbox-source {background: #fff;}
     .building-steps-prev:after, .building-steps-next:after {font-size: 26px;}
 
     .building-steps-prev, .building-steps-next {height: 32px;}
+
+    .contact>p>a:first-child {margin-bottom: 16px;}
 }
 
 .footer-content__bottom {width: 100%;position: relative;text-align: center;padding-top: 40px;}

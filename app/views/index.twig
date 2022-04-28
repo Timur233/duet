@@ -444,9 +444,30 @@
       </div>
     </section>
 
+    <section id="bodyCallback" class="body-callback">
+      <div class="container">
+        <form class="body-callback__form">
+          <div class="body-callback__title">
+            <h3>
+              Оставить заявку
+            </h3>
+          </div>
+          <div class="body-callback__field">
+            <input type="text" class="form-control" id="bodyFormName" name="name" fieldname="Имя" placeholder="Имя">
+          </div>
+          <div class="body-callback__field">
+            <input type="text" class="form-control" id="bodyFormPhone" name="phone" placeholder="Телефон" fieldname="Телефон" required="">
+          </div>
+          <div class="body-callback__field">
+            <a href="#" class="btn btn-gradient float-start sendFormButton" onclick="frontend.form(this); return false">Отправить</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
     <section id="advantages" class="advantages bg-white py-6">
-      <div class="container py-3">
-        <h2 class="sectionTitle text-center">
+      <div class="container">
+        <h2 class="sectionTitle text-center mt-0">
           {{ advant_title|raw }}
         </h2>
         <div class="advantages__stars">
@@ -687,7 +708,7 @@
                 <input type="text" class="form-control" id="formName" name="name" fieldname="Имя" placeholder="Имя">
               </div>
               <div class="mb-3">
-                <input type="text" class="form-control" id="formPhone" name="phone" placeholder="Телефон" fieldname="Телефон" required="" onkeyup="editMaskInput(this)">
+                <input type="text" class="form-control" id="formPhone" name="phone" placeholder="Телефон" fieldname="Телефон" required="">
               </div>
               <div>
                 <a href="#" class="btn btn-gradient float-start sendFormButton" onclick="frontend.form(this); return false">Отправить</a>

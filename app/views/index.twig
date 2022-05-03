@@ -143,31 +143,6 @@
         </div>
       </div>
     </section>
-  
-  	{% if discounst %}
-    <section id="discount" class="discount pt-6 pb-6 pb-md-0">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-12 col-lg-6 d-flex align-items-center order-1 order-md-0">
-            <div class="about_block">
-              <h2 class="sectionTitle">
-                {{ discounst_title }}
-                <span class="color">{{ discounst_color_title }}</span>
-                <span class="ghostTitle">{{ discounst_ghost_title }}</span>
-              </h2>
-              {{ discounst_text|raw }}
-            </div>
-          </div>
-
-          <div class="col-md-12 col-lg-6 oder-0 order-md-1 mb-5 mb-md-0 text-center">
-              <img src="https://cms.abpx.kz{{ discounst_image.path }}" class="mx-auto" alt="{{ discounst_title }} {{ discounst_color_title }}">
-          </div>
-
-        </div>
-      </div>
-    </section>
-    {% endif %}
 
     <section id="about" class="aboutUsBlock pb-6 pt-6 py-md-6 bg-white">
       <div class="container">
@@ -443,6 +418,20 @@
         </div>
       </div>
     </section>
+  
+  	{% if discount %}
+    <section id="discount" class="discount pb-6">
+      <div class="container">
+        {% if discount_link %}<a href="{{ discount_link }}" target="_blank" class="discount-link">{% endif %}
+          <picture>
+            <source media="(max-width: 550px)" srcset="https://cms.abpx.kz{{ discount_image_mob.path }}">
+            <source media="(max-width: 768px)" srcset="https://cms.abpx.kz{{ discount_image_tablet.path }}">
+            <img src="https://cms.abpx.kz{{ discount_image.path }}" class="w-100" alt="{{ discount_title }}">
+          </picture>
+        {% if discount_link %}</a>{% endif %}
+      </div>
+    </section>
+    {% endif %}
 
     <section id="bodyCallback" class="body-callback">
       <div class="container">

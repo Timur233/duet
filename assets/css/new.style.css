@@ -2142,7 +2142,7 @@ img.fslightbox-source {background: #fff;}
 
     .contact>p>a:first-child {margin-bottom: 16px;}
 
-    .slider-bottom-content {position: absolute;bottom: 0px;left: 0px;right: 0px;background: linear-gradient(0deg, black, transparent);color: #e1e1e1;padding: 60px 12px 12px 12px;font-weight: 500;display: block;}
+    .slider-bottom-content {position: absolute;bottom: 0px;left: 0px;right: 0px;background: linear-gradient(0deg, rgb(0 0 0 / 75%), transparent);color: #e1e1e1;padding: 60px 12px 12px 12px;font-weight: 500;font-size: 15px;display: block;}
 
     .slider-bottom-content__addres {margin-bottom: 0px;}
 
@@ -2155,5 +2155,5 @@ img.fslightbox-source {background: #fff;}
 
 .about-price {
     font-size: 14px;
-    color: #d22b00;
+    color: #333;
 }

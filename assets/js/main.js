@@ -526,6 +526,17 @@ var frontend = (function frontendModule() {
 
         function renderOffers(offers) {
             var offersHtml = '';
+
+            function renderPrice(price, square) {
+                let offerPrice = '';
+
+                if (price) {
+                    offerPrice =  `<p>Цена: <b>от ${Number(price).toLocaleString()} тг. за м<sup>2</sup></b></p>`;
+                }
+
+                return offerPrice;
+            };
+            
             offersHtml += '<div class="swiper-flats"><div class="swiper-wrapper">';
             offers.forEach(function (el) {
                 offersHtml += '		<div class="swiper-slide">';
@@ -536,12 +547,8 @@ var frontend = (function frontendModule() {
                 offersHtml += '              <div class="floor-data align-items-start mt-2">';
                 offersHtml += '                <h4>' + el.rooms + ((el.rooms != 1) ? translater.multiplier : translater.multiplierX1) + '</h4>';
                 offersHtml += '                <p>' + translater.square + ': <b>' + el.square + ' м2</b></p>';
+                offersHtml += renderPrice(el.price, el.square);
                 offersHtml += '                <a class="downloadPlan" data-caption="' + el.title + '" href="https://cms.abpx.kz' + el.plan.path + '" onclick="frontend.lightBox(this.href); return false">' + translater.download_plan + '</a>';
-                //offersHtml += '                <div class="mb-3">';
-                //offersHtml += '                  <span>Стоимость от: </span>';
-                //offersHtml += '                  <h6>18 530 000 тг</h6>';
-                //offersHtml += '                  <b>от 306 280 за м2</b>';
-                //offersHtml += '                </div>';
                 offersHtml += '              </div>';
                 offersHtml +=
                     '              <div class="orderBottons mt-auto align-items-end">';

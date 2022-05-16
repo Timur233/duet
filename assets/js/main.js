@@ -531,7 +531,7 @@ var frontend = (function frontendModule() {
                 let offerPrice = '';
 
                 if (price) {
-                    offerPrice =  `<p>Цена: <b>от ${Number(price).toLocaleString()} тг. за м<sup>2</sup></b></p>`;
+                    offerPrice =  `<p>Цена: <b>от ${Number(price).toLocaleString()} тг.</b></p>`;
                 }
 
                 return offerPrice;

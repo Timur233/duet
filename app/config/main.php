@@ -5,6 +5,6 @@
   define('SINGLETON',        $_ENV['SINGLETON'] ?? '');
   define('FORM_NAME',        $_ENV['FORM_NAME'] ?? '');
   define('FLATS_COLLECTION', $_ENV['FLATS_COLLECTION'] ?? '');
-  define('PROJECT_ID',       "");
+  define('PROJECT_ID',       $_ENV['PROJECT_ID']);
 
 ?>

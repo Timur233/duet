@@ -1,29 +1,34 @@
 {% if building_steps is defined and building_steps is not empty %}
-    <section id="building-steps" class="building-steps section">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="section-title__h2">{{ steps_title }}</h2>
-                <div class="section-title__control">
-                    <div class="swiper-button-prev building-steps__controll"></div>
-                    <div class="swiper-button-next building-steps__controll"></div>
-                </div>
-            </div>
 
-            <div class="building-steps__swiper swiper-container">
+    <section id="buildingSteps" class="buildingSteps py-6">
+        <div class="container">
+  
+            <h2 class="sectionTitle">
+              {{ steps_title }}
+              <span class="gold">{{ steps_color_title }}</span>
+    
+              <div class="building-steps-navigation">
+                <div class="swiper-button-prev building-steps-prev"></div>
+                <div class="swiper-button-next building-steps-next"></div>
+              </div>
+    
+            </h2>
+
+            <div class="steps-swiper swiper-container py-4">
                 <div class="swiper-wrapper">
                     {% for item in building_steps %}
                         <div 
-                            class="swiper-slide building-steps__slide" 
-                            style="background-image: url('https://cms.abpx.kz{{ item.preview }}')"
+                            class="swiper-slide hasGallery"                            
                         >
                             {% if item.gallery %}
                                 <a 
-                                    class="building-steps__link" 
                                     href="#" 
                                     data-gallery-images="{% for img in item.gallery %}https://cms.abpx.kz{{ img.styles[0].path }}{% if loop.last == false  %},{% endif%}{% endfor %}"  
-                                    onclick="() => {frontend.lightBox(this.getAttribute('data-gallery-images')); return false}">
+                                    onclick="frontend.lightBox(this.getAttribute('data-gallery-images')); return false">
+                                    <div class="stepImage" style="background-image: url('https://cms.abpx.kz{{ item.preview }}')">
+                                    </div>
                                     <div class="step-information">
-                                        <h3 class="building-steps__title">{{ translate[item.format_date.month] }} {{ item.format_date.year }}</h3>
+                                        <h3 class="building-steps__title">{{ translate[item.format_date.month] }} <span class="gold">{{ item.format_date.year }}</span></h3>
                                     </div>
                                 </a>
                             {% endif %}
@@ -33,4 +38,5 @@
             </div>
         </div>
     </section>
+
 {% endif %}

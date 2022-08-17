@@ -8,6 +8,7 @@
     use app\core\View;
 
     include "app/models/model_filter.php";
+    include "app/models/model_building_steps.php";
 
     class Controller_Main extends Controller
     {

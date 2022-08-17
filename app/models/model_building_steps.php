@@ -1,6 +1,8 @@
 <?php
     namespace app\models;
 
+    use app\core\Model;
+
     class Model_Building_Steps extends Model
     {
         public static $lang = 'ru';

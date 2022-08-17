@@ -564,50 +564,7 @@
       </div>
     </section>
 
-    <section id="buildingSteps" class="buildingSteps d-none py-6">
-      <div class="container">
-
-        <h2 class="sectionTitle">
-          {{ steps_title }}
-          <span class="gold">{{ steps_color_title }}</span>
-
-          <div class="building-steps-navigation">
-            <div class="swiper-button-prev building-steps-prev"></div>
-            <div class="swiper-button-next building-steps-next"></div>
-          </div>
-
-        </h2>
-
-        <div class="steps-swiper swiper-container py-4">
-          <div class="swiper-wrapper">
-            {% for item in steps_items %}
-            <div class="swiper-slide {% if item.children[1].settings.gallery %}hasGallery{% endif %}">
-              {% if item.children[1].settings.gallery %}
-                <a href="#" data-gallery-images="{% for img in item.children[1].settings.gallery %}https://cms.abpx.kz{{ img.path}}{% if loop.last == false  %},{% endif%}{% endfor %}"  onclick="frontend.lightBox(this.getAttribute('data-gallery-images')); return false">
-              {% endif %}
-              <div class="stepImage" style="background-image: url(https://cms.abpx.kz{{ item.children[2].settings.image.path }})"></div>
-                <div class="step-information">
-                  <h3>
-                    {% set date = item.children[0].settings.text|split(' ') %}
-                    {% for word in date %}
-                      {% if loop.last %}
-                        <span class="gold">{{ word }} </span>
-                      {% else %}
-                        {{ word }}&nbsp;
-                      {% endif %}
-                    {% endfor %}</h3>
-                </div>
-                {% if item.children[1].settings.gallery %}
-                  </a>
-                {% endif %}
-            </div>
-            {% endfor %}
-          </div>
-
-        </div>
-
-      </div>
-    </section>
+    {{ include('widgets/building_steps.twig') }}
 
     <section id="aboutExin" class="aboutExin py-6">
       <div class="container pb-4">

@@ -2157,3 +2157,13 @@ img.fslightbox-source {background: #fff;}
     font-size: 14px;
     color: #333;
 }
+
+.form-preloader {
+    display: block;
+    position: absolute;
+    background: rgb(255 255 255 / 32%);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}

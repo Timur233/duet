@@ -241,11 +241,15 @@ var frontend = (function frontendModule() {
     }
 
     function formValidator(element) {
-        let errors = false
-        let form = element.parentNode.parentNode
-        let inputs = form.querySelectorAll('input, textarea')
-        let userName = form.querySelector('[name="name"]')
-        let formQuery = new Object()
+        let errors = false;
+        let form = element.parentNode.parentNode;
+        let inputs = form.querySelectorAll('input, textarea');
+        let userName = form.querySelector('[name="name"]');
+        let formQuery = new Object();
+
+        let preloader = document.createElement('div');
+        preloader.classList.add('form-preloader');
+        form.appendChild(preloader);
 
         if (userName.value == '') {
             userName.value = 'Не указано'
@@ -269,6 +273,8 @@ var frontend = (function frontendModule() {
             let user_data = collect_user_data()
             formQuery = Object.assign(formQuery, user_data)
             formSendData(formQuery, form)
+        } else {
+            preloader.remove()
         }
 
     }
